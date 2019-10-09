@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Android Parallax Recyclerview</string>
+    <string name="title1">عنوان فیلم اول</string>
+    <string name="title2">عنوان فیلم دوم</string>
+    <string name="title3">عنوان فیلم سوم</string>
+    <string name="description1">توضییحات فیلم اول</string>
+    <string name="description2">توضییحات فیلم دوم</string>
+    <string name="description3">توضییحات فیلم سوم</string>
 </resources>
