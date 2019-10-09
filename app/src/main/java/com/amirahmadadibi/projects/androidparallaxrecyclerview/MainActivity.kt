@@ -1,5 +1,6 @@
 package com.amirahmadadibi.projects.androidparallaxrecyclerview
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -7,16 +8,20 @@ import androidx.recyclerview.widget.PagerSnapHelper
 import com.amirahmadadibi.projects.androidparallaxrecyclerview.adapter.ShowAdapter
 import com.amirahmadadibi.projects.androidparallaxrecyclerview.extension.setupParallaxScrollListener
 import com.amirahmadadibi.projects.androidparallaxrecyclerview.model.Show
+import io.github.inflationx.viewpump.ViewPumpContextWrapper
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    override fun attachBaseContext(newBase: Context?) {
+        super.attachBaseContext(ViewPumpContextWrapper.wrap(newBase!!))
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val moviewList = mutableListOf<Show>()
-        moviewList +=   Show(R.string.title1,R.string.description1,R.drawable.photo1)
-        moviewList +=   Show(R.string.title2,R.string.description2,R.drawable.photo2)
-        moviewList +=   Show(R.string.title3,R.string.description3,R.drawable.photo3)
+        moviewList += Show(R.string.title1, R.string.description1, R.drawable.photo1)
+        moviewList += Show(R.string.title2, R.string.description2, R.drawable.photo2)
+        moviewList += Show(R.string.title3, R.string.description3, R.drawable.photo3)
         setContentView(R.layout.activity_main)
         recyclerview.apply {
             // Create and attach the adapter
